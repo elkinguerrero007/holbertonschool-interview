@@ -1,34 +1,7 @@
-# *_0x00. Linear Algebra._*
+# *_Insert in sorted linked list._*
  
-![matrix-c]()
-## **_Resources._** 👌 
+![linked-list-insert](https://user-images.githubusercontent.com/85587286/183459033-dbaec50c-5d50-4916-8151-2256a17b28c0.gif)
 
- 
-
-### **_Read or watch:_**  👈
-
-
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
-
-### **_References:_**  👈
-
->> * []()
->> * []()
->> * []()
->> * []()
->> * []()
 
 
 
@@ -37,9 +10,7 @@
 >> * Ubuntu 20.04 LTS
 >> 
 >> * Emacs editor && Pycharm
->> 
->> * numpy (version 1.19.2) 
->> 
+
 >> * pycodestyle (version 2.6)
 
 
