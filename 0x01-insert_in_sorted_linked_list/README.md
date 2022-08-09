@@ -9,8 +9,10 @@
 
 >> * Ubuntu 20.04 LTS
 >> 
->> * Emacs editor && Pycharm
-
->> * pycodestyle (version 2.6)
+>> * Emacs editor
+>>
+>> * Checked using betty-style
+>>
+>> *Programs and functions will be compiled with gcc 4.8.4 using the flags -Wall -Werror -Wextra and -pedantic
 
 
