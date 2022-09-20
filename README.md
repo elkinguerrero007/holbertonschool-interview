@@ -8,4 +8,6 @@
 >> * [ 0x03. Minimum Operations ](https://github.com/elkinguerrero007/holbertonschool-interview/tree/main/0x03-minimum_operations)
 >> * [0x04. Sandpiles](https://github.com/elkinguerrero007/holbertonschool-interview/tree/main/0x04-sandpiles)
 >> * [0x05-linked_list_palindrome](https://github.com/elkinguerrero007/holbertonschool-interview/tree/main/0x05-linked_list_palindrome)
->> * [log_parsing](https://github.com/elkinguerrero007/holbertonschool-interview/tree/main/0x06-log_parsing)
+>> * [0x06. log_parsing](https://github.com/elkinguerrero007/holbertonschool-interview/tree/main/0x06-log_parsing)
+>> *[0x07. Linked list cycle](https://github.com/elkinguerrero007/holbertonschool-interview/tree/main/0x07-linked_list_cycle)
+>> * []()
