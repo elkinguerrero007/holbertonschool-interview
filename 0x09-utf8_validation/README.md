@@ -1,5 +1,7 @@
 # *_UTF-8 Validation_*
 
+![encode](https://user-images.githubusercontent.com/85587286/201231144-df8390a4-3ff8-4ac9-a192-c424de0b3ad1.png)
+
 
 ## **_Built with:_** 🛠️
 
