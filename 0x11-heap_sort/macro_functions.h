@@ -56,11 +56,11 @@
 /* @false: boolean type data */
 /*-------------------------------------------------*/
 #define SWAP(VARIABLE_A, VARIABLE_B, TYPE) \
-  do {                                   \
-  TYPE TMP_SWAP = VARIABLE_A;        \
-  VARIABLE_A = VARIABLE_B;           \
-  VARIABLE_B = TMP_SWAP;             \
-  } while (false)
+do {                                   \
+TYPE TMP_SWAP = VARIABLE_A;        \
+VARIABLE_A = VARIABLE_B;           \
+VARIABLE_B = TMP_SWAP;             \
+} while (false)
 
 /*-----------------------------------------------------------------*/
 /* COPY_FROM_UNTIL - function is used to copy value of n positions */
@@ -77,12 +77,12 @@
 /* @false: boolean type data */
 /*-----------------------------------------------------------------*/
 #define COPY_FROM_UNTIL(FROM, SINCE, TO, START, LAST) \
-  do {                                                 \
-  for (; (START) < (LAST); START++, SINCE++)    \
-    {                                             \
-  TO[START] = FROM[SINCE];                  \
-    }                                             \
-  } while (false)
+do {                                                 \
+for (; (START) < (LAST); START++, SINCE++)    \
+{                                             \
+TO[START] = FROM[SINCE];                  \
+}                                             \
+} while (false)
 
 /*-------------------------------------------------------------------------*/
 /* BUILD_HEAD_STUCTURE - build the heap data structure. */
@@ -102,13 +102,13 @@
 /* @sift_down: function to implement the sift_down of head sort algorithm. */
 /*-------------------------------------------------------------------------*/
 #define BUILD_HEAD_STUCTURE(ARRAY, SIZE)          \
-  do {                                             \
-  int i = 0;                                \
-  for (i = PARENT_INDEX(SIZE); i >= 0; i--) \
-    {                                         \
-  sift_down(ARRAY, i, SIZE, SIZE);      \
-    }                                         \
-  } while (false)
+do {                                             \
+int i = 0;                                \
+for (i = PARENT_INDEX(SIZE); i >= 0; i--) \
+{                                         \
+sift_down(ARRAY, i, SIZE, SIZE);      \
+}                                         \
+} while (false)
 
 /*--------------------------------------------------------------------------*/
 /* SWAP_DOUBLE_LIST - is used to swap previous and current node of double  */
@@ -126,69 +126,69 @@
 /* @false: boolean type data */
 /*-------------------------------------------------------------------------*/
 #define SWAP_DOUBLE_LIST(NODE, HEAD, TYPE)                         \
-  do {                                                              \
-  TYPE node_connections[4];                                  \
-  node_connections[0] = (NODE)->prev->next;                  \
-  node_connections[1] = (NODE)->prev->prev;                  \
-  node_connections[2] = (NODE)->next;                        \
-  node_connections[3] = (NODE)->prev;                        \
-  if (*(HEAD) == node_connections[3])                        \
-    {                                                          \
-      *(HEAD) = (NODE);                                      \
-    }                                                          \
-  if (node_connections[3]->prev)                             \
-    {                                                          \
-      node_connections[3]->prev->next = node_connections[0]; \
-    }                                                          \
-  if ((NODE)->next)                                          \
-    {                                                          \
-      (NODE)->next->prev = node_connections[3];              \
-    }                                                          \
-  node_connections[3]->next = node_connections[2];           \
-  node_connections[3]->prev = node_connections[0];           \
-  (NODE)->next = node_connections[3];                        \
-  (NODE)->prev = node_connections[1];                        \
-  } while (false)
+do {                                                              \
+TYPE node_connections[4];                                  \
+node_connections[0] = (NODE)->prev->next;                  \
+node_connections[1] = (NODE)->prev->prev;                  \
+node_connections[2] = (NODE)->next;                        \
+node_connections[3] = (NODE)->prev;                        \
+if (*(HEAD) == node_connections[3])                        \
+{                                                          \
+*(HEAD) = (NODE);                                      \
+}                                                          \
+if (node_connections[3]->prev)                             \
+{                                                          \
+node_connections[3]->prev->next = node_connections[0]; \
+}                                                          \
+if ((NODE)->next)                                          \
+{                                                          \
+(NODE)->next->prev = node_connections[3];              \
+}                                                          \
+node_connections[3]->next = node_connections[2];           \
+node_connections[3]->prev = node_connections[0];           \
+(NODE)->next = node_connections[3];                        \
+(NODE)->prev = node_connections[1];                        \
+} while (false)
 
-      /*--------------------------------------------------------------------------*/
-      /* SWAP_DOUBLE_LIST_NEXT - is used to swap next and current node of double  */
-      /*                         linked list. */
+/*--------------------------------------------------------------------------*/
+/* SWAP_DOUBLE_LIST_NEXT - is used to swap next and current node of double  */
+/*                         linked list. */
 
-      /* # PARAMETERS */
-      /* @NODE: pointer to current node to swap . */
-      /* @HEAD: double pinter to head node of double likend list. */
-      /* @TYPE: type of the double likend list node. */
+/* # PARAMETERS */
+/* @NODE: pointer to current node to swap . */
+/* @HEAD: double pinter to head node of double likend list. */
+/* @TYPE: type of the double likend list node. */
 
-      /* # LOCALS */
-      /* @node_connections: array to storage the pointers conections between node.*/
+/* # LOCALS */
+/* @node_connections: array to storage the pointers conections between node.*/
 
-      /* # GLOBALS */
-      /* @false: boolean type data */
-      /*-------------------------------------------------------------------------*/
+/* # GLOBALS */
+/* @false: boolean type data */
+/*-------------------------------------------------------------------------*/
 #define SWAP_DOUBLE_LIST_NEXT(NODE, HEAD, TYPE)             \
-      do {                                                       \
-      TYPE node_connections[4];                           \
-      if ((NODE)->prev)                                   \
-	node_connections[0] = (NODE)->prev->next;       \
-      node_connections[1] = (NODE)->next->next;           \
-      node_connections[2] = (NODE)->next;                 \
-      node_connections[3] = (NODE);                       \
-      if (*(HEAD) == NODE)                                \
-			  {                                                   \
-			    *(HEAD) = node_connections[2];                  \
-			  }                                                   \
-			  if (NODE->prev)                                     \
-			    {                                                   \
-			      (NODE)->prev->next = node_connections[2];       \
-			    }                                                   \
-			  if ((NODE)->next->next)                             \
-			    {                                                   \
-			      (NODE)->next->next->prev = node_connections[3]; \
-			    }                                                   \
-			  (NODE)->next->next = node_connections[3];           \
-			  (NODE)->next->prev = (NODE)->prev;                  \
-			  (NODE)->next = node_connections[1];                 \
-			  (NODE)->prev = node_connections[2];                 \
-			  } while (false)
+do {                                                       \
+TYPE node_connections[4];                           \
+if ((NODE)->prev)                                   \
+node_connections[0] = (NODE)->prev->next;       \
+node_connections[1] = (NODE)->next->next;           \
+node_connections[2] = (NODE)->next;                 \
+node_connections[3] = (NODE);                       \
+if (*(HEAD) == NODE)                                \
+{                                                   \
+(HEAD) = node_connections[2];                  \
+}                                                   \
+if (NODE->prev)                                     \
+{                                                   \
+(NODE)->prev->next = node_connections[2];       \
+}                                                   \
+if ((NODE)->next->next)                             \
+{                                                   \
+(NODE)->next->next->prev = node_connections[3]; \
+}                                                   \
+(NODE)->next->next = node_connections[3];           \
+(NODE)->next->prev = (NODE)->prev;                  \
+(NODE)->next = node_connections[1];                 \
+(NODE)->prev = node_connections[2];		    \
+} while (false)
 
 #endif /* MACRO_FUNCTIONS_H */
