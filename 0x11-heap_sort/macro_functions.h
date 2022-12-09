@@ -191,4 +191,4 @@
 			  (NODE)->prev = node_connections[2];                 \
 			  } while (false)
 
-#endif /* MACRO_FUNCTIONS_H */#ifndef MACRO_FUNCTIONS_H
+#endif /* MACRO_FUNCTIONS_H */
