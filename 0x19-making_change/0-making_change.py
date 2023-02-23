@@ -1,36 +1,25 @@
 #!/usr/bin/python3
 """
-Change comes from within
-Time Complexity O(n * log(n))
-Space complexity O(1)
+makeChange method
 """
 
 
-def makeChange(coins: list, total: int) -> int:
+def makeChange(coins, total):
     """
-    Given a pile of coins of different values, determine the fewest
-    number of coins needed to meet a given amount total.
-    Args:
-        coins (list): Is a list of the values of the coins in
-        your possession
-        total (int):  Total number to reach
-    Returns:
-        int: Fewest number of coins needed to meet total
+    determine the fewest number of coins needed
+    to meet a given amount total
     """
+    number_coins = 0
+    cents = 0
     if total <= 0:
         return 0
-    coins.sort(reverse=True)
-    number = 0
-    for i in coins:
-        while i <= total:
-            total -= i
-            number += 1
-        if total == 0:
-            return number
+
+    coins = sorted(coins, reverse=True)
+
+    for coin in coins:
+        while cents + coin <= total:
+            cents += coin
+            number_coins += 1
+        if cents == total:
+            return number_coins
     return -1
-
-
-if __name__ == "__main__":
-    coins = [1, 2, 5, 10, 25]
-    total = 47
-    print(makeChange(coins, total))
