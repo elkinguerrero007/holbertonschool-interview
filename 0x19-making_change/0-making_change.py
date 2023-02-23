@@ -1,31 +1,25 @@
 #!/usr/bin/python3
 """
-making_change
+Funtion makeChange(coins, total) should be
+implemented in the file 0-making_change.py
 """
 
 
 def makeChange(coins, total):
     """
-    Making change method
+    Further instructions in the 0x19-making_change directory
+    Arguments:
+        - coins is a list of the values of the coins in your possession
+        - total is the total amount of money to make change for
+    Returns:
+        - fewest number of coins needed to meet total
     """
     if total <= 0:
         return 0
-    if coins == []:
-        return -1
     coins.sort(reverse=True)
-    len_coins = len(coins)
-    i = 0
-    counter = 1
-    sub_total = coins[i]
-
-    while True:
-        if sub_total > total:
-            counter -= 1
-            sub_total -= coins[i]
-            i += 1
-            if i >= len_coins:
-                return makeChange(coins[1:], total)
-        if sub_total == total:
-            return counter
-        sub_total += coins[i]
-        counter += 1
+    change = 0
+    for coin in coins:
+        while total >= coin:
+            total -= coin
+            change += 1
+    return change if total == 0 else -1
